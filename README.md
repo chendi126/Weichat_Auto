@@ -1,24 +1,34 @@
-# 银河快报——公众号文章自动生成发布系统
+# 🚀 银河快报——公众号文章自动生成发布系统
 
-这是一个基于 AI 的科技新闻和 GitHub 热门项目自动生成并发布到微信公众号的系统。它可以：
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/chendi126/Weichat_Auto.svg)](https://github.com/chendi126/Weichat_Auto/stargazers)
 
-- 自动搜索科技新闻并生成文章
-- 自动获取 GitHub 热门项目并生成推荐文章
-- 自动发布到微信公众号
-- 通过飞书机器人智能响应用户请求
+> 🤖 基于 AI 的科技新闻和 GitHub 热门项目自动生成并发布到微信公众号
+
+## ✨ 特点
+
+- 🔍 **智能搜索** - 自动搜索最新科技新闻
+- 🐙 **GitHub 热门** - 自动获取 GitHub 热门项目并生成推荐文章
+- 📱 **自动发布** - 一键发布到微信公众号草稿箱
+- 🤝 **飞书集成** - 通过飞书机器人智能响应用户请求
+- ⏰ **定时任务** - 支持每日自动发布
 
 ---
 
-## 目录
+## 📋 目录
 
 - [配置说明](#配置说明)
+- [快速开始](#快速开始)
 - [运行命令](#运行命令)
 - [微信公众号配置](#微信公众号配置)
 - [飞书机器人配置](#飞书机器人配置)
+- [项目结构](#项目结构)
+- [常见问题](#常见问题)
 
 ---
 
-## 配置说明
+## ⚙️ 配置说明
 
 所有配置都在 `config.yaml` 文件中，修改后保存立即生效。
 
@@ -38,16 +48,16 @@ wechat:
 位置：`config.yaml` 中
 
 ```yaml
+# DeepSeek（用于生成新闻文章、GitHub 文章和7字总结）
+deepseek:
+  api_key: "你的API Key"
+  model: "deepseek-chat"
+
 # MiniMax（备用）
 minimax:
   api_key: "你的API Key"
   model: "abab6.5s-chat"
   base_url: "https://api.minimaxi.com/v1"
-
-# DeepSeek（用于生成新闻文章、GitHub 文章和7字总结）
-deepseek:
-  api_key: "你的API Key"
-  model: "deepseek-chat"
 ```
 
 ### 3. 定时任务配置
@@ -93,7 +103,35 @@ tavily:
 
 ---
 
-## 运行命令
+## 🚀 快速开始
+
+```bash
+# 1. 克隆项目
+git clone https://github.com/chendi126/Weichat_Auto.git
+cd Weichat_Auto
+
+# 2. 创建虚拟环境
+python -m venv .venv
+
+# 3. 激活虚拟环境
+# Windows:
+.venv\Scripts\activate
+# Linux/Mac:
+source .venv/bin/activate
+
+# 4. 安装依赖
+pip install -r requirements.txt
+
+# 5. 修改配置文件
+# 编辑 config.yaml 填入你的 API Key
+
+# 6. 运行
+python src/main.py --now
+```
+
+---
+
+## 💻 运行命令
 
 ### Windows
 
@@ -157,7 +195,7 @@ nohup python src/feishu_server.py > feishu.log 2>&1 &
 
 ---
 
-## 微信公众号配置
+## 📱 微信公众号配置
 
 > **注意**：
 > - 自动发布文章到**草稿箱**功能，需要在公众平台配置**IP白名单**
@@ -200,7 +238,7 @@ wechat:
 
 ---
 
-## 飞书机器人配置
+## 💬 飞书机器人配置
 
 ### 步骤 1：创建飞书应用
 
@@ -260,7 +298,7 @@ python src/feishu_server.py
 
 ---
 
-## 项目结构
+## 📁 项目结构
 
 ```
 projects/
@@ -280,7 +318,7 @@ projects/
 
 ---
 
-## 常见问题
+## ❓ 常见问题
 
 ### Q: 修改配置后需要重启吗？
 
