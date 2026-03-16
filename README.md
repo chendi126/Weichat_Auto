@@ -166,7 +166,7 @@ nohup python src/feishu_server.py > feishu.log 2>&1 &
 ### 步骤 1：获取 AppID 和 AppSecret
 
 1. 登录 [微信开发者平台](https://open.weixin.qq.com/)
-2. 进入「设置与开发」→「基本配置」
+2. 点击公众号——[基础信息]
 3. 记录「公众号appID」和「公众号appsecret」
 
 ### 步骤 2：配置 IP 白名单（重要！）
