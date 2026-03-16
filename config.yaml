@@ -1,0 +1,32 @@
+# DeepSeek API 配置（用于生成新闻文章、GitHub 文章和7字总结）
+deepseek:
+  api_key: "你的API Key"
+  model: "deepseek-chat"
+
+# MiniMax API 配置（备用）
+minimax:
+  api_key: "你的API Key"
+  model: "abab6.5s-chat"
+  base_url: "https://api.minimaxi.com/v1"
+
+# 微信公众号配置
+wechat:
+  app_id: "你的AppID"
+  app_secret: "你的AppSecret"
+  cover_image: "封面.png"
+
+# 定时任务配置
+scheduler:
+  enabled: true
+  hour: 8
+  minute: 0
+
+# 飞书机器人配置
+feishu:
+  app_id: "你的AppID"
+  app_secret: "你的AppSecret"
+  port: 5000
+
+# Tavily AI搜索配置
+tavily:
+  api_key: "你的API Key"
